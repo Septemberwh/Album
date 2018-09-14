@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.perspectice {
+    margin-top: 13%;
+    perspective: 900px;  /*定义 3D 元素距视图的距离，以像素计*/
+}
+
+.wrap {
+    width: 133px;
+    height: 200px;
+    /*border: 1px solid cornflowerblue;*/
+    margin: 150px auto;
+    transform-style: preserve-3d;    /*子元素将保留其 3D 位置。*/
+    transform: rotateX(-20deg) rotateY(0deg);
+}
+.wrap img {
+    position: absolute;
+    top: 0;
+}

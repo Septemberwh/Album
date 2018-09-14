@@ -1,0 +1,54 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Album</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div class="perspectice">
+    <div class="wrap">
+        <img src="images/3.jpeg" width="133px" height="200px" alt="">
+        <img src="images/2.jpeg" width="133px" height="200px" alt="">
+        <img src="images/1.jpeg" width="133px" height="200px" alt="">
+        <img src="images/2.jpeg" width="133px" height="200px" alt="">
+        <img src="images/1.jpeg" width="133px" height="200px" alt="">
+        <img src="images/2.jpeg" width="133px" height="200px" alt="">
+        <img src="images/1.jpeg" width="133px" height="200px" alt="">
+        <img src="images/2.jpeg" width="133px" height="200px" alt="">
+        <img src="images/1.jpeg" width="133px" height="200px" alt="">
+        <img src="images/2.jpeg" width="133px" height="200px" alt="">
+    </div>
+</div>
+</body>
+<script>
+  // 页面加载完毕之后再加载js
+  window.onload = function () {
+    // 通过标签获取元素结点
+    var oImg = document.getElementsByTagName("img");
+    // 旋转度数
+    var Deg = 360 / oImg.length;
+    // 遍历 jquery forEach(数组方法)
+    // 把oimg借用成array方法
+    Array.prototype.forEach.call(oImg, function (el, index) {
+      el.style.transform = "rotateY(" + Deg * index + "deg) translateZ(350px)";
+      el.style.zIndex = -index;
+      // 动画 延时
+      el.style.transition = "transform 1s " + index * 0.1 + "s";
+    });
+    setTimeout(function () {
+      console.log(11);
+      let n = 0;
+      let wrap = document.getElementsByClassName("wrap")[0];
+      setInterval(function () {
+        n++;
+        wrap.style.transform = "rotateY(" + Deg * n + "deg)";
+        // 动画 延时
+        wrap.style.transition = "transform 1s 0.1s";
+      }, 2000)
+    }, 1500);
+  }
+</script>
+</html>
